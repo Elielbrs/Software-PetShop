@@ -1,0 +1,14 @@
+# PetShop - Dependências do Projeto
+# Todas as dependências abaixo são parte da biblioteca padrão do Python
+# Não há pacotes externos necessários!
+
+# Bibliotecas da Standard Library (não precisam ser instaladas):
+# - sqlite3 (gerenciamento de banco de dados SQL - built-in)
+# - datetime (manipulação de datas e horas - built-in)
+# - abc (Abstract Base Classes - built-in)
+
+# Versão mínima recomendada:
+# Python >= 3.7
+
+# Para instalar Python: https://www.python.org/downloads/
+# Para verificar sua versão: python --version
