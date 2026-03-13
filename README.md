@@ -1,3 +1,9 @@
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
+
+## ⚠️ Status do projeto
+Este projeto ainda está em construção.  
+Algumas funcionalidades podem não estar completas e poderão sofrer alterações futuras.
+
 # PetShop - Sistema de Gerenciamento
 
 Sistema completo de gerenciamento para pet shops, desenvolvido em Python com SQLite3. Oferece funcionalidades para gerenciar usuários, pets, serviços, agendamentos, produtos e vendas.
