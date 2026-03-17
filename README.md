@@ -1,6 +1,13 @@
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
+
+## ⚠️ Status do projeto
+Este projeto ainda está em construção.  
+Algumas funcionalidades podem não estar completas e poderão sofrer alterações futuras.
+
 # PetShop - Sistema de Gerenciamento
 
-Sistema completo de gerenciamento para pet shops, desenvolvido em Python com SQLite3. Oferece funcionalidades para gerenciar usuários, pets, serviços, agendamentos, produtos e vendas.
+Sistema completo de gerenciamento para pet shops, desenvolvido em Python com SQLite3. Oferece funcionalidades para gerenciar usuários, pets, serviços, agendamentos, produtos e vendas com interface interativa via CLI.
+
 
 ## 📁 Estrutura do Projeto
 
@@ -9,6 +16,7 @@ PetShop/
 ├── main.py                          # Arquivo principal (entry point)
 ├── README.md                        # Este arquivo
 ├── requirements.txt                 # Dependências do projeto
+├── test.py                          # Arquivo de testes
 ├── data/                            # Dados (banco de dados)
 │   └── pets.db                      # Arquivo SQLite
 └── src/                             # Código-fonte da aplicação
@@ -26,6 +34,14 @@ PetShop/
     │   ├── agendamento.py           # Modelo de Agendamento
     │   ├── produto.py               # Modelo de Produto
     │   └── venda.py                 # Modelo de Venda
+    ├── gerenciadores/               # Gerenciadores de CRUD
+    │   ├── __init__.py
+    │   ├── menu.py                  # Menu principal
+    │   ├── usuarios.py              # CRUD de Usuários
+    │   ├── pets.py                  # CRUD de Pets
+    │   ├── servicos.py              # CRUD de Serviços
+    │   ├── agendamentos.py          # CRUD de Agendamentos
+    │   └── produtos.py              # CRUD de Produtos
     └── utils/                       # Utilitários
         ├── __init__.py
         ├── relatorios.py            # Classe de Relatórios
@@ -65,7 +81,73 @@ Todas as dependências são parte da biblioteca padrão do Python!
 
 ## 📚 Guia de Uso
 
-### Importar Classes
+### Executar o Sistema
+
+```bash
+python main.py
+```
+
+O programa exibirá um menu interativo com as seguintes opções:
+
+```
+🐾 PETSHOP - SISTEMA DE GERENCIAMENTO
+1. Gerenciar Usuários
+2. Gerenciar Pets
+3. Gerenciar Serviços
+4. Gerenciar Agendamentos
+5. Gerenciar Produtos
+6. Gerenciar Vendas
+7. Relatórios
+8. Alertas de Estoque
+0. Sair
+```
+
+### Funcionalidades de Cada Módulo
+
+#### 1️⃣ **Gerenciar Usuários**
+- ✅ Cadastrar novo usuário
+- ✅ Atualizar dados de usuário
+- ✅ Deletar usuário
+- ✅ Consultar usuário por ID
+- ✅ Listar todos os usuários
+
+#### 2️⃣ **Gerenciar Pets**
+- ✅ Cadastrar novo pet
+- ✅ Atualizar dados de pet
+- ✅ Deletar pet
+- ✅ Consultar pet por ID
+- ✅ Listar todos os pets
+
+#### 3️⃣ **Gerenciar Serviços**
+- ✅ Cadastrar novo serviço
+- ✅ Atualizar dados de serviço
+- ✅ Deletar serviço
+- ✅ Consultar serviço por ID
+- ✅ Listar todos os serviços
+
+#### 4️⃣ **Gerenciar Agendamentos**
+- ✅ Agendar novo serviço
+- ✅ Atualizar agendamento
+- ✅ Cancelar agendamento
+- ✅ Consultar agendamento por ID
+- ✅ Listar todos os agendamentos
+
+#### 5️⃣ **Gerenciar Produtos**
+- ✅ Cadastrar novo produto
+- ✅ Atualizar dados de produto
+- ✅ Deletar produto
+- ✅ Consultar produto por ID
+- ✅ Listar todos os produtos
+
+#### 7️⃣ **Relatórios**
+- 📊 Gerar relatórios de dados
+- 📈 Visualizar estatísticas gerais
+
+#### 8️⃣ **Alertas de Estoque**
+- ⚠️ Verificar produtos com estoque baixo
+- 📉 Monitorar quantidade de itens
+
+### Importar Classes (Programação Direta)
 
 ```python
 from src.models import Database, Usuario, Pet, Servico, Agendamento, Produto, Venda
@@ -88,15 +170,21 @@ usuario.salvar()
 ### Criar um Pet
 
 ```python
-pet = Pet(nome="Rex", especie="Cachorro", racao="Raça", idade=3, dono_id=1)
+pet = Pet(nome="Rex", especie="Cachorro", racao="Labrador", idade=3, dono_id=1)
 pet.salvar()
 ```
 
-### Consultar Pets com Informações do Dono
+### Usar Gerenciadores
 
 ```python
-pets = Pet.consultar_todos()
-# Retorna todos os pets com nome, espécie, raça, idade e informações do dono
+from src.gerenciadores.usuarios import gerenciar_usuarios
+from src.gerenciadores.pets import gerenciar_pets
+
+# Gerenciar usuários de forma interativa
+gerenciar_usuarios()
+
+# Gerenciar pets de forma interativa
+gerenciar_pets()
 ```
 
 ### Criar um Serviço

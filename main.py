@@ -3,17 +3,8 @@ PetShop - Sistema de Gerenciamento de Loja de Animais
 Arquivo principal (entry point)
 """
 
-# Importa todas as classes do projeto
-from src.models import (
-    Database,
-    Usuario,
-    Pet,
-    Servico,
-    Agendamento,
-    Produto,
-    Venda
-)
-from src.utils import Relatorios, AlertaEstoque
+from src.models import Database
+from src.gerenciadores.menu import opcoes_menu
 
 
 def main():
@@ -21,9 +12,8 @@ def main():
     # Inicializa o banco de dados
     Database.inicializar_banco()
     print("✓ Banco de dados inicializado!\n")
-    
-    # Aqui você pode adicionar a lógica principal da aplicação
-    # ou deixar disponíveis as classes para uso
+
+    opcoes_menu()
 
 
 if __name__ == "__main__":

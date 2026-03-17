@@ -77,7 +77,7 @@ class Pet(EntidadeBase):
             cursor = conn.cursor()
             cursor.execute("""
                 SELECT p.id, p.nome, p.especie, p.racao, p.idade, 
-                       u.id, u.nome, u.email, u.telefone
+                u.id, u.nome, u.email, u.telefone
                 FROM pets p 
                 LEFT JOIN usuarios u ON p.dono_id = u.id
                 ORDER BY p.nome
@@ -90,7 +90,7 @@ class Pet(EntidadeBase):
             for pet in pets:
                 dono_info = f"{pet[6]} ({pet[7]})" if pet[5] else "Não atribuído"
                 print(f"ID: {pet[0]:<3} | Nome: {pet[1]:<15} | Espécie: {pet[2]:<12} | Raça: {pet[3]:<15} | "
-                      f"Idade: {pet[4]:<4} anos | Dono: {dono_info:<40}")
+                    f"Idade: {pet[4]:<4} anos | Dono: {dono_info:<40}")
             print("="*120 + "\n")
             
             conn.close()
