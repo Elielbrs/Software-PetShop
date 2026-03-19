@@ -1,6 +1,7 @@
 # PetShop - Dependências do Projeto
-# Todas as dependências abaixo são parte da biblioteca padrão do Python
-# Não há pacotes externos necessários!
+
+# Pacotes externos:
+openpyxl==3.10.0  # Geração de relatórios em Excel
 
 # Bibliotecas da Standard Library (não precisam ser instaladas):
 # - sqlite3 (gerenciamento de banco de dados SQL - built-in)

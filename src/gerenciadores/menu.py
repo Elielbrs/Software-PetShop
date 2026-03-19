@@ -41,7 +41,7 @@ def opcoes_menu():
         elif escolha == '6':
             print("\n⚠️  Módulo de Vendas em desenvolvimento...")
         elif escolha == '7':
-            Relatorios.gerar_relatorios()
+            Relatorios.gerar_relatorio_excel()
         elif escolha == '8':
             AlertaEstoque.verificar_estoque()
         elif escolha == '0':
